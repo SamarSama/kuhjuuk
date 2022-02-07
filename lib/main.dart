@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kuhjuuk/UI/open.dart';
 
-import 'Login.dart';
+import 'UI/Login.dart';
+import 'UI/fristscreen.dart';
+import 'generated/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        S.delegate,
+
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -26,7 +35,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: FristScreen(),
     );
   }
 }
